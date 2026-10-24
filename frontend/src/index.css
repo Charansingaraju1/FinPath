@@ -1,0 +1,67 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --primary-terracotta: #C74634;
+    --deep-terracotta: #9E3529;
+    --warm-cream: #F6E9D8;
+    --soft-cream: #FBF5EC;
+    --ivory-card: #FFF9F1;
+    --espresso-text: #49362E;
+    --secondary-text: #79675E;
+    --peach-beige: #E7BFA9;
+    --dusty-rose: #D9A28F;
+    --pale-rose: #F4E2D9;
+    --sage-surface: #DCE8DE;
+    --success-green: #356B4B;
+    --border-color: #E5D8CB;
+    --muted-surface: #F0E4D7;
+  }
+
+  body {
+    background-color: var(--warm-cream);
+    color: var(--espresso-text);
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+  }
+
+  h1, h2, h3, .font-display {
+    font-family: 'DM Serif Display', Georgia, serif;
+  }
+}
+
+.bg-cream { background-color: #F6E9D8; }
+.bg-cream-soft { background-color: #FBF5EC; }
+.bg-ivory { background-color: #FFF9F1; }
+.bg-terracotta { background-color: #C74634; }
+.bg-terracotta-dark { background-color: #9E3529; }
+.bg-sage { background-color: #DCE8DE; }
+.bg-peach { background-color: #E7BFA9; }
+.bg-pale-rose { background-color: #F4E2D9; }
+.bg-muted-cream { background-color: #F0E4D7; }
+
+.text-espresso { color: #49362E; }
+.text-secondary { color: #79675E; }
+.text-terracotta { color: #C74634; }
+.text-terracotta-dark { color: #9E3529; }
+.text-sage-green { color: #356B4B; }
+
+.border-finpath { border-color: #E5D8CB; }
+
+/* Custom shadow utilities matching the soft, warm FinPath aesthetic */
+.shadow-soft {
+  box-shadow: 0 4px 20px -2px rgba(73, 54, 46, 0.06), 0 2px 6px -1px rgba(73, 54, 46, 0.04);
+}
+
+.shadow-warm {
+  box-shadow: 0 10px 30px -4px rgba(199, 70, 52, 0.12), 0 4px 12px -2px rgba(73, 54, 46, 0.06);
+}
+
+/* Glassmorphism accents for warm FinTech styling */
+.glass-ivory {
+  background: rgba(255, 249, 241, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
