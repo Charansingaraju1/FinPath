@@ -57,7 +57,7 @@ public class SecurityConfig {
                 .headers(headers -> headers.frameOptions(HeadersConfigurer.FrameOptionsConfig::disable)) // for h2 console
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/api/auth/**").permitAll()
+                        .requestMatchers("/", "/health", "/api/auth/**").permitAll()
                         .requestMatchers(HttpMethod.GET, "/api/opportunities", "/api/opportunities/public", "/api/opportunities/categories", "/api/opportunities/{id:[0-9]+}").permitAll()
                         .requestMatchers(HttpMethod.POST, "/api/opportunities/compare").permitAll()
                         .requestMatchers(HttpMethod.POST, "/api/revenue-calculator/calculate").permitAll()

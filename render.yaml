@@ -8,7 +8,7 @@ services:
     dockerContext: .
     plan: free
     region: oregon
-    healthCheckPath: /api/public/stats
+    healthCheckPath: /health
     envVars:
       - key: SPRING_PROFILES_ACTIVE
         value: postgres
@@ -35,24 +35,4 @@ services:
       - key: JWT_SECRET
         generateValue: true
       - key: CORS_ALLOWED_ORIGINS
-        value: "*"
-
-  # Frontend Static Site (React + Vite)
-  - type: web
-    name: finpath-frontend
-    runtime: static
-    rootDir: frontend
-    buildCommand: npm install && npm run build
-    staticPublishPath: dist
-    pullRequestPreviewsEnabled: false
-    routes:
-      - type: rewrite
-        source: /*
-        destination: /index.html
-
-databases:
-  - name: finpath-db
-    databaseName: finpath
-    user: finpath
-    plan: free
-    region: oregon
+        value: "https://frontend-five-wine-48.vercel.app"
